@@ -1,30 +1,25 @@
-/revisi pt2
-
-ORG 100
+/revisi final
 
 Input
-Store A /mengambil input dan menyimpan ke variabel A
+Store A / input nilai dan masukkan ke variabel A
 
 Input
-Store B /mengambil input dan menyimpan ke variabel B
+Store B / input nilai dan masukkan ke vairabel B
 
-Load A
-Subt B / mengurangi A dengan B
+Load A / Mengambil nilai yang tersimpan di A
+Subt B / Kemudian kurangi dengan nilai di B
+Store Y / Simpan Hasilnya ke Y
 
-STORE result / menyimpan jawaban ke variabel result
+Skipcond 000 / cek jika negatif maka instruksi berikutnya di skip
 
-Load result / mengambil data di result
-Skipcond 800 / jika AC > 0, maka skip instruksi berikut
+Jump end / Mnegabaikan instruksi berikutnya dan melompat ke instruksi end
 
-Load A 
-Add B
+load A / Mengambil nilai di A
+Add B / Kemudian jumlahkan dengan nilai di B
+store Y / Simpan hasilnya ke Y
 
-Store result2
-
-Output
-Halt
-
+end, Output / Menampilkan hasil ke output
+halt / menghentikan program
 A, DEC 0
 B, DEC 0
-result, DEC 0
-result2, DEC 0
+Y, DEC 0
