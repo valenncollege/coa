@@ -1,0 +1,23 @@
+    / Program untuk menghitung z = a + b jika a < b,
+    / atau z = a - b jika a >= b
+
+    ORG 100         / Mulai program di alamat 100
+    LOAD A          / Load nilai A ke AC (Accumulator)
+    SUBT B          / Kurangi AC dengan nilai B, hasil ada di AC
+    SKIPCOND 800    / Skip ke instruksi berikutnya jika AC negatif (A < B)
+    JUMP MINUS_OR_EQUAL / Lompat ke bagian untuk A >= B
+    ADD B           / Tambahkan B ke A (karena A < B)
+    STORE Z         / Simpan hasil (A + B) ke Z
+    JUMP END        / Lompat ke akhir program
+
+MINUS_OR_EQUAL,    / Label untuk bagian A >= B
+    LOAD A          / Load kembali A ke AC
+    SUBT B          / Kurangi AC dengan B
+    STORE Z         / Simpan hasil (A - B) ke Z
+
+END,               / Akhir program
+    HALT            / Hentikan program
+
+A, DEC 5           / Deklarasi nilai A (ubah sesuai kebutuhan)
+B, DEC 3           / Deklarasi nilai B (ubah sesuai kebutuhan)
+Z, DEC 0           / Variabel untuk menyimpan hasil
