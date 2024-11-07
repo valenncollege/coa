@@ -1,0 +1,41 @@
+     Assembly listing for: revisi_Tugas W9_160424066_Jevon Valentino_KP B.mas
+                Assembled: Thu Nov 07 21:01:31 ICT 2024
+
+         |         ORG 200           
+200 5000 |         INPUT             
+201 220E |         STORE A          / input nilai dan masukkan ke variabel A
+         |                          
+202 5000 |         INPUT             
+203 220F |         STORE B          / input nilai dan masukkan ke vairabel B
+         |                          
+204 120E |         LOAD A           / Mengambil nilai yang tersimpan di A
+205 420F |         SUBT B           / Kemudian kurangi dengan nilai di B
+206 2210 |         STORE Y          / Simpan Hasilnya ke Y
+         |                          
+207 8000 |         SKIPCOND 000     / cek jika negatif maka instruksi berikutnya di skip
+         |                          
+208 920C |         JUMP end         / Mnegabaikan instruksi berikutnya dan melompat ke instruksi end
+         |                          
+209 120E |         LOAD A           / Mengambil nilai di A
+20A 320F |         ADD B            / Kemudian jumlahkan dengan nilai di B
+20B 2210 |         STORE Y          / Simpan hasilnya ke Y
+         |                          
+20C 6000 |  end    OUTPUT           / Menampilkan hasil ke output
+20D 7000 |         HALT             / menghentikan program
+20E 0000 |  A      DEC 0             
+20F 0000 |  B      DEC 0             
+210 0000 |  Y      DEC 0             
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          A      |   20E   | 201, 204, 209
+          B      |   20F   | 203, 205, 20A
+          Y      |   210   | 206, 20B
+          end    |   20C   | 208
+         --------------------------------------------------
+
+
